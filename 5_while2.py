@@ -15,13 +15,22 @@
     
 """
 
-questions_and_answers = {}
+questions_and_answers = {"Как дела?": "Хорошо", "Что делаешь?": "Программирую",
+                         "Сколько чудес света?": "7", "Синяя или красная?": "Красная",
+                         "Стакан наполовину что?": "Полон", "В чём смысл жизни": "42",
+                         "Кто похитил Рождество?": "Гринч", "Кто проживает на дне океана?": "Спан Боб",
+                         "Фрукт Нового Года?": "Мандарин", "36,6 это что?": "Это норма"}
 
 def ask_user(answers_dict):
     """
     Замените pass на ваш код
     """
-    pass
-    
+    while True:
+        user_question=input("Задайте ваш вопрос ")
+        if  user_question=='Стоп':
+            break
+        key=questions_and_answers.get(user_question,"Такого вопроса нет в словаре")
+        print(key)
+           
 if __name__ == "__main__":
     ask_user(questions_and_answers)

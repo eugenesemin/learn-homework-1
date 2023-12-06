@@ -19,7 +19,26 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    age=input('Введите ваш возраст ')
+
+    try:
+        age_num=int(age)
+
+        if age_num<0:
+            print('Вы не можете быть младше 0 лет')
+        elif age_num <7:
+            print('Вам следует учиться в детском саду')
+        elif age_num <18:
+            print('Вам следует учиться в школе')
+        elif age_num <26:
+            print('Вам следует учиться в ВУЗе')
+        elif age_num <120:
+            print('Вам следует работать')
+        else:
+            print('Возраст должен быть в диапазоне 0-120 лет')
+    
+    except (ValueError, UnboundLocalError):
+        print('Возраст должен быть числом')
 
 if __name__ == "__main__":
     main()
