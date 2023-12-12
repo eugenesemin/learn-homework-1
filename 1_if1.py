@@ -14,12 +14,33 @@
 
 """
 
+def  age_advisor(age_num):
+    if age_num<0:
+        return 'Вы не можете быть младше 0 лет'
+    elif age_num <7:
+        return 'Вам следует учиться в детском саду'
+    elif age_num <18:
+        return 'Вам следует учиться в школе'
+    elif age_num <26:
+        return 'Вам следует учиться в ВУЗе'
+    elif age_num <120:
+        return 'Вам следует работать'
+    else:
+        return 'Возраст должен быть в диапазоне 0-120 лет'
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    age=input('Введите ваш возраст ')
 
+    try:
+        age_num=int(age)
+        result=age_advisor(age_num)
+        print(result)
+    except (ValueError, UnboundLocalError):
+        print('Возраст должен быть числом')
+    
 if __name__ == "__main__":
     main()
