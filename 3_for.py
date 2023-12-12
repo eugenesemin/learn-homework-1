@@ -21,11 +21,11 @@ sales=  [
         {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
         ]
 
-def sum_sales(phone_items_sold):
-    sold_sum = 0
-    for num_sold in phone_items_sold:
-        sold_sum += num_sold
-    return(sold_sum)
+# def sum_sales(phone_items_sold):
+#     sold_sum = 0
+#     for num_sold in phone_items_sold:
+#         sold_sum += num_sold
+#     return(sold_sum)
 
 def main():
     """
@@ -35,17 +35,17 @@ def main():
     total_sales=0
 
     for model in sales:
-        prod_sum=sum_sales(model['items_sold'])
-        prod_avg=round(sum_sales(model['items_sold'])/len(model['items_sold']),1)
+        prod_sum=sum(model['items_sold'])
+        prod_avg=sum(model['items_sold'])/len(model['items_sold'])
         print(f"Суммарное кол-во продаж {model['product']}: {prod_sum}")
-        print(f"Среднее кол-во продаж {model['product']}: {prod_avg}")
+        print(f"Среднее кол-во продаж {model['product']}: {prod_avg:.1f}")
         
-        total_sales+=sum_sales(model['items_sold'])
+        total_sales+=sum(model['items_sold'])
 
-    avg_sales=round(total_sales/len(sales),1)
+    avg_sales=total_sales/len(sales)
 
     print(f"Суммарное кол-во продаж всех товаров: {total_sales}")
-    print(f"Среднее кол-во продаж всех товаров: {avg_sales}")  
+    print(f"Среднее кол-во продаж всех товаров: {avg_sales:.1f}")  
 
 
 if __name__ == "__main__":

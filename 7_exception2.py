@@ -26,8 +26,7 @@ def discounted(price, discount, max_discount=20):
               raise ValueError('Слишком большая максимальная скидка')
           if discount >= max_discount:
               return price
-          else:
-              return price - (price * discount / 100)
+          return price - (price * discount / 100)
       except (ValueError, TypeError):
           break
     
